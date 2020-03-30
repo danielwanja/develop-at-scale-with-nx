@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { StoreSharedUiModule } from '@bg-hoard/store/shared-ui';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent],
@@ -14,6 +15,7 @@ import { StoreSharedUiModule } from '@bg-hoard/store/shared-ui';
     MatCardModule,
     MatToolbarModule,
     StoreSharedUiModule,
+    HttpClientModule,
     RouterModule.forRoot(
       [
         {
