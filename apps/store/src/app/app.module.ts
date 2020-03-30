@@ -14,7 +14,18 @@ import { StoreSharedUiModule } from '@bg-hoard/store/shared-ui';
     MatCardModule,
     MatToolbarModule,
     StoreSharedUiModule,
-    RouterModule.forRoot([], { initialNavigation: 'enabled' })
+    RouterModule.forRoot(
+      [
+        {
+          path: 'game/:id',
+          loadChildren: () =>
+            import('@bg-hoard/store/feature-game-detail').then(
+              module => module.StoreFeatureGameDetailModule
+            )
+        }
+      ],
+      { initialNavigation: 'enabled' }
+    )
   ],
   providers: [],
   bootstrap: [AppComponent]
